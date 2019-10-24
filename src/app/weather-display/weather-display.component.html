@@ -1,0 +1,27 @@
+<app-weather-input (addEvent)="getWeather($event)"></app-weather-input>
+<br />
+
+<div *ngIf="errorText">
+  <div class="alert alert-danger" role="alert">
+    {{ errorText }}
+  </div>
+</div>
+
+<br />
+<ul class="list-group">
+  <li class="list-group-item">
+    Location:
+    <strong>{{
+      weatherObj ? weatherObj.name + ", " + weatherObj.sys.country : ""
+    }}</strong>
+  </li>
+  <li class="list-group-item">
+    Temperature: {{ weatherObj ? weatherObj.main.temp : "" }}
+  </li>
+  <li class="list-group-item">
+    Pressure: {{ weatherObj ? weatherObj.main.pressure : "" }}
+  </li>
+  <li class="list-group-item">
+    Humidity: {{ weatherObj ? weatherObj.main.humidity : "" }}
+  </li>
+</ul>
