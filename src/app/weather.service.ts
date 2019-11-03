@@ -10,7 +10,7 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
   getWeather(city) {
     return this.http.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.api}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${this.api}`
     );
   }
 }

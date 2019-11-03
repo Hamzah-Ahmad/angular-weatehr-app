@@ -10,18 +10,34 @@
 <br />
 <ul class="list-group">
   <li class="list-group-item">
-    Location:
+    <div class="header">Location:</div>
     <strong>{{
       weatherObj ? weatherObj.name + ", " + weatherObj.sys.country : ""
     }}</strong>
   </li>
   <li class="list-group-item">
-    Temperature: {{ weatherObj ? weatherObj.main.temp : "" }}
+    <div class="header">Weather:</div>
+    {{ weatherObj ? weatherObj.weather[0].main : "" }}
   </li>
   <li class="list-group-item">
-    Pressure: {{ weatherObj ? weatherObj.main.pressure : "" }}
+    <div class="header">Description:</div>
+    {{
+      weatherObj ? capitalizeFirstLetter(weatherObj.weather[0].description) : ""
+    }}
   </li>
   <li class="list-group-item">
-    Humidity: {{ weatherObj ? weatherObj.main.humidity : "" }}
+    <div class="header">Temperature:</div>
+    {{
+      weatherObj ? ((weatherObj.main.temp - 32) / 1.8).toFixed(2) + "°C /" : ""
+    }}
+    {{ weatherObj ? weatherObj.main.temp + "°F" : "" }}
+  </li>
+  <li class="list-group-item">
+    <div class="header">Wind:</div>
+    {{ weatherObj ? weatherObj.wind.speed + " km/h" : "" }}
+  </li>
+  <li class="list-group-item">
+    <div class="header">Humidity:</div>
+    {{ weatherObj ? weatherObj.main.humidity + "%" : "" }}
   </li>
 </ul>

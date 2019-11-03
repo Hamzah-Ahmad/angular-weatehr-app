@@ -1,0 +1,23 @@
+li {
+  font-size: 25px;
+}
+
+.header {
+  font-size: 15px;
+}
+
+li {
+  background: #e8e8e8;
+}
+li:nth-child(odd) {
+  background: #ffffff;
+}
+@media screen and (max-width: 450px) {
+  li {
+    font-size: 20px;
+  }
+
+  .header {
+    font-size: 15px;
+  }
+}

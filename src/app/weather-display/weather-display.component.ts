@@ -26,7 +26,13 @@ export class WeatherDisplayComponent implements OnInit {
     );
   }
 
+  capitalizeFirstLetter(str: string) {
+    let firstLetter = str[0].toUpperCase();
+    let remainingStr = str.slice(1, str.length + 1);
+    return firstLetter.concat(remainingStr);
+  }
+
   ngOnInit() {
-    // this.getWeather();
+    this.capitalizeFirstLetter("test");
   }
 }
